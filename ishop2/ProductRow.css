@@ -1,0 +1,8 @@
+.selectedRow
+{
+    background-color: rgba(255, 136, 0, 0.644)
+}
+input[type='button']
+{
+    width: 100%;
+}
