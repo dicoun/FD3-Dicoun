@@ -1,0 +1,13 @@
+.List
+{
+    border: solid black 1px;
+    width: 230px;
+    height: 80px;
+    padding: 3px 7px;
+    overflow: auto;
+    margin-top: 10px;
+}
+input[type="button"]
+{
+    margin-left: 10px;
+}
