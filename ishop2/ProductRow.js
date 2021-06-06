@@ -9,6 +9,8 @@ var ProductRow = React.createClass({
       remainder: React.PropTypes.string.isRequired,
       code: React.PropTypes.string.isRequired,
       cbRowDelete: React.PropTypes.func.isRequired,
+      cbRowClick: React.PropTypes.func.isRequired,
+      selectedRowCode: React.PropTypes.string,
     },
   
     delete: function(EO) {
@@ -20,21 +22,12 @@ var ProductRow = React.createClass({
     },
 
     rowClick: function(e){
-        function getParentTag(node,tag) {
-            if (node) {return (node.tagName == tag) ? node : getParentTag(node.parentElement,tag);}
-            return null;
-          }
-        var table = getParentTag(e.target,'TABLE');
-        for (var row of table.rows) {
-            row.classList.remove('selectedRow');
-        }
-        var selectedRow = getParentTag(e.target,'TR');
-        selectedRow.classList.add('selectedRow');
+        this.props.cbRowClick(this.props.code);
     },
   
     render: function() {
   
-        return React.DOM.tr({className:'Row', onClick:this.rowClick},
+        return React.DOM.tr({ className: (this.props.selectedRowCode == this.props.code) ? 'Row selectedRow' : 'Row', onClick:this.rowClick},
             React.DOM.td({key:'ProdName '+ this.props.code},
                 React.DOM.span({className:'ProdName'},this.props.name),
             ),
