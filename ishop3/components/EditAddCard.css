@@ -1,0 +1,26 @@
+label {
+    white-space: pre;
+ }
+.tab{
+    display:inline-block; 
+    margin-left: 10px; 
+ }
+.tabName { 
+    display:inline-block; 
+    margin-left: 26px; 
+}
+.tabPrice { 
+    display:inline-block; 
+    margin-left: 32px; 
+}
+.tabUrl { 
+    display:inline-block; 
+    margin-left: 33px; 
+}
+.tabQuantity { 
+    display:inline-block; 
+    margin-left: 10px; 
+}
+.err {
+    color: red;
+}
