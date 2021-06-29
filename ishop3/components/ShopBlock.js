@@ -340,7 +340,7 @@ class ShopBlock extends React.Component {
               code={this.state.edetedRowCode} url={this.state.edetedRowURL} name={this.state.edetedRowName}
               price={this.state.edetedRowPrice} remainder={this.state.edetedRowRemainder} cbTextChanged={this.formTextChanged}
               cbFieldClick={this.FormFieldClicked} nameErrState={this.state.nameWarning} priceErrState={this.state.priceWarning}
-              urlErrState={this.state.urlWarning} quantityErrState={this.state.quantityWarning}
+              urlErrState={this.state.urlWarning} quantityErrState={this.state.quantityWarning} key={this.state.edetedRowCode}
             />
             <label>  </label>
             {(this.state.nameWarning || this.state.priceWarning || this.state.urlWarning || this.state.quantityWarning) ? <div><input type='button' value='Save' disabled onClick={this.EditBtn}/><input type='button' value='Cancel' onClick={this.CnlEditBtn}/></div> 

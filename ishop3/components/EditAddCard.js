@@ -19,15 +19,13 @@ class EditAddCard extends React.Component {
         quantityErrState: PropTypes.bool,
     };
 
-    /*textChanged = (EO) => {
-        console.log('onchanged');
-        this.props.cbTextChanged(EO.target.value);
-        //EO.stopPropagation();
-    }*/
-
-    TextChanged(EO, type){
+    TextChanged = (EO, type) => {
         this.props.cbTextChanged(EO.target.value, type);
     }
+
+    /*TextChanged(EO, type){
+        this.props.cbTextChanged(EO.target.value, type);
+    }*/
 
     FieldClick = (EO) => {
         this.props.cbFieldClick();
