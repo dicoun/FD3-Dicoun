@@ -1,0 +1,10 @@
+.br2jsx {
+    background-color: rgb(31, 29, 54);
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    font-size: large;
+    color: white;
+    vertical-align:middle;
+    display: table-cell;
+}
