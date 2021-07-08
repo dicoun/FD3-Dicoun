@@ -1,0 +1,9 @@
+input{
+    margin: 3pt;
+}
+.mainDiv{
+    width: 290px;
+}
+div{
+    width: fit-content;
+}
