@@ -29,6 +29,8 @@ class MobileCompany extends React.PureComponent {
     clients: this.props.clients
   };
 
+  filterFlag = '';
+
   setName1 = () => {
     this.setState({name:'МТС'});
   };
@@ -40,9 +42,12 @@ class MobileCompany extends React.PureComponent {
   filterAll = () => {
     let newClients=[...this.state.clients]; // копия самого массива клиентов
     newClients.forEach( (c,i) => {
-      let newClient={...c, filterFlag:'all'}; // копия хэша изменившегося клиента
-      newClients[i]=newClient;
+      if(c.renderFlag == false){
+        let newClient={...c, renderFlag:true}; // копия хэша изменившегося клиента
+        newClients[i]=newClient;
+      }
     });
+    this.filterFlag = 'all';
     this.setState({
       clients: newClients
     });
@@ -51,9 +56,12 @@ class MobileCompany extends React.PureComponent {
   filterActive = () => {
     let newClients=[...this.state.clients]; // копия самого массива клиентов
     newClients.forEach( (c,i) => {
-      let newClient={...c, filterFlag:'active'}; // копия хэша изменившегося клиента
-      newClients[i]=newClient;
+      if((c.state == 'active') && (c.renderFlag == false)){
+        let newClient={...c, renderFlag:true}; // копия хэша изменившегося клиента
+        newClients[i]=newClient;
+      }
     });
+    this.filterFlag = 'active';
     this.setState({
       clients: newClients
     });
@@ -62,9 +70,12 @@ class MobileCompany extends React.PureComponent {
   filterBlocked = () => {
     let newClients=[...this.state.clients]; // копия самого массива клиентов
     newClients.forEach( (c,i) => {
-      let newClient={...c, filterFlag:'blocked'}; // копия хэша изменившегося клиента
-      newClients[i]=newClient;
+      if((c.state == 'blocked') && (c.renderFlag == false)){
+        let newClient={...c, renderFlag:true}; // копия хэша изменившегося клиента
+        newClients[i]=newClient;
+      }
     });
+    this.filterFlag = 'blocked';
     this.setState({
       clients: newClients
     });
@@ -140,10 +151,10 @@ class MobileCompany extends React.PureComponent {
   render() {
     console.log("MobileCompany render");
     var clientsCode=this.state.clients.map( client => {
-        if(client.state == client.filterFlag){
+        if(client.state == this.filterFlag){
           return <MobileClient key={client.id} client={client}/>;
         }
-        if(client.filterFlag == 'all' || client.filterFlag == undefined){
+        if(this.filterFlag == 'all' || this.filterFlag == ''){
           return <MobileClient key={client.id} client={client}/>;
         }
       }
