@@ -81,13 +81,21 @@ class MobileCompany extends React.PureComponent {
     });
   };
 
-  /*setNewSurnameRef = (ref) => {
+  setNewSurnameRef = (ref) => {
     this.newSurnameRef=ref;
   };
 
   setNewBallanceRef = (ref) => {
     this.newBallanceRef=ref;
-  };*/
+  };
+
+  setNewNameRef = (ref) => {
+    this.newNameRef=ref;
+  };
+
+  setNewMiddleNameRef = (ref) => {
+    this.newMiddleNameRef=ref;
+  };
 
   AddBtn = () => {
     let newClients=[...this.state.clients]; // копия самого массива клиентов
@@ -134,18 +142,66 @@ class MobileCompany extends React.PureComponent {
     this.setState({clients: newClients});
   }
 
+  SaveBtn = (id) => {
+    let newClients=[...this.state.clients]; // копия самого массива клиентов
+    newClients.forEach( (c,i) => {
+      let newClient={...c}; // копия хэша изменившегося клиента
+      if(c.id == id){
+        if ( this.newSurnameRef ) { // всегда проверяем - мало ли метод вызовется когда DOM-элемента уже нет или ещё нет?
+          let newSurname=this.newSurnameRef.value;
+          let newBallance=this.newBallanceRef.value;
+          newClient.disabledFlag=true;
+          newClient.fam=newSurname;
+          newClient.balance=newBallance;
+          if(c.addFlag){
+            let newName=this.newNameRef.value;
+            newClient.im=newName;
+            let newMiddleName=this.newMiddleNameRef.value;
+            newClient.otch=newMiddleName;
+            newClient.addFlag=false;
+          }
+          newClients[i]=newClient;
+        }
+      }
+    });
+    this.setState({clients: newClients});
+  }
+
+  CancelBtn = (id) => {
+    let newClients=[...this.state.clients]; // копия самого массива клиентов
+    newClients.forEach( (c,i) => {
+      let newClient={...c}; // копия хэша изменившегося клиента
+      if(c.id == id){
+        newClient.disabledFlag=true;
+        if(c.addFlag){
+          newClient.addFlag=false;
+        }
+        newClients[i]=newClient; 
+      }
+    });
+    this.setState({clients: newClients});
+  }
+
   componentDidMount = () => {
     voteEvents.addListener('EditBtnClicked',this.EditBtn);
     voteEvents.addListener('DeleteBtnClicked',this.DeleteBtn);
-    /*voteEvents.addListener('setSurnameRef',this.setNewSurnameRef);
-    voteEvents.addListener('setBallanceRef',this.setNewBallanceRef);*/
+    voteEvents.addListener('SaveBtnClicked',this.SaveBtn);
+    voteEvents.addListener('CancelBtnClicked',this.CancelBtn);
+    voteEvents.addListener('setSurnameRef',this.setNewSurnameRef);
+    voteEvents.addListener('setBallanceRef',this.setNewBallanceRef);
+    voteEvents.addListener('setNameRef',this.setNewNameRef);
+    voteEvents.addListener('setMiddleNameRef',this.setNewMiddleNameRef);
   };
 
   componentWillUnmount = () => {
     voteEvents.removeListener('EditBtnClicked',this.EditBtn);
     voteEvents.removeListener('DeleteBtnClicked',this.DeleteBtn);
-    /*voteEvents.removeListener('setSurnameRef',this.setNewSurnameRef);
-    voteEvents.removeListener('setBallanceRef',this.setNewBallanceRef);*/
+    voteEvents.removeListener('SaveBtnClicked',this.SaveBtn);
+    voteEvents.removeListener('CancelBtnClicked',this.CancelBtn);
+    voteEvents.removeListener('setSurnameRef',this.setNewSurnameRef);
+    voteEvents.removeListener('setBallanceRef',this.setNewBallanceRef);
+    voteEvents.removeListener('setNameRef',this.setNewNameRef);
+    voteEvents.removeListener('setMiddleNameRef',this.setNewMiddleNameRef);
   };
   
   render() {

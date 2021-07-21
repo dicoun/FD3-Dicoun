@@ -23,48 +23,64 @@ class MobileClient extends React.PureComponent {
     voteEvents.emit('DeleteBtnClicked',this.props.client.id);
   }
 
-  /*setSurnameRef = (ref) => {
+  save = (EO) => {
+    voteEvents.emit('SaveBtnClicked',this.props.client.id);
+  }
+
+  cancel = (EO) => {
+    voteEvents.emit('CancelBtnClicked',this.props.client.id);
+  }
+
+  setSurnameRef = (ref) => {
     voteEvents.emit('setSurnameRef', ref);
   }
 
   setBallanceRef = (ref) => {
     voteEvents.emit('setBallanceRef', ref);
-  }*/
+  }
+
+  setNameRef = (ref) => {
+    voteEvents.emit('setNameRef', ref);
+  }
+
+  setMiddleNameRef = (ref) => {
+    voteEvents.emit('setMiddleNameRef', ref);
+  }
 
   render() {
     console.log("MobileClient id="+this.props.client.id+" render");
     return (
-      <tr className={this.state.client.id}>
+      <tr className={this.props.client.id}>
         <td>
           {(this.props.client.disabledFlag) &&
-            <input type='text' className='text' defaultValue={this.state.client.fam} /*ref={this.setSurnameRef}*/ disabled/>
+            <input type='text' className='text' defaultValue={this.props.client.fam} ref={this.setSurnameRef} disabled/>
           }
           {(!this.props.client.disabledFlag ) &&
-            <input type='text' className='text' defaultValue={this.state.client.fam} /*ref={this.setSurnameRef}*//>
+            <input type='text' className='text' defaultValue={this.props.client.fam} ref={this.setSurnameRef}/>
           }
         </td>
         <td>
           {(!this.props.client.addFlag) &&
-              <input type='text' className='text' defaultValue={this.state.client.im} disabled/>
+              <input type='text' className='text' defaultValue={this.props.client.im} ref={this.setNameRef} disabled/>
           }
           {(this.props.client.addFlag) &&
-              <input type='text' className='text' defaultValue={this.state.client.im}/>
+              <input type='text' className='text' defaultValue={this.props.client.im} ref={this.setNameRef}/>
           }
         </td>
         <td>
           {(!this.props.client.addFlag) &&
-            <input type='text' className='text' defaultValue={this.state.client.otch} disabled/>
+            <input type='text' className='text' defaultValue={this.props.client.otch} ref={this.setMiddleNameRef} disabled/>
           }
           {(this.props.client.addFlag) &&
-            <input type='text' className='text' defaultValue={this.state.client.otch}/>
+            <input type='text' className='text' defaultValue={this.props.client.otch} ref={this.setMiddleNameRef}/>
           }
         </td>
         <td>
           {(this.props.client.disabledFlag) &&
-              <input type='text' className='text' defaultValue={this.state.client.balance} /*ref={this.setBallanceRef}*/ disabled/>
+              <input type='text' className='text' defaultValue={this.props.client.balance} ref={this.setBallanceRef} disabled/>
           }
           {(!this.props.client.disabledFlag) &&
-              <input type='text' className='text' defaultValue={this.state.client.balance} /*ref={this.setBallanceRef}*//>
+              <input type='text' className='text' defaultValue={this.props.client.balance} ref={this.setBallanceRef}/>
           }
         </td>
         {(this.props.client.state == 'active') && 
@@ -78,10 +94,20 @@ class MobileClient extends React.PureComponent {
           </td>
         }   
         <td>
-            <input type='button' value='Редактировать' onClick={this.edit}></input>
+         {(this.props.client.disabledFlag) &&
+            <input type='button' className='btnInGrid' value='Редактировать' onClick={this.edit}></input>
+         }
+         {(!this.props.client.disabledFlag) &&
+            <input type='button' className='btnInGrid' value='Сохранить' onClick={this.save}></input>
+         }
         </td>
         <td>
-            <input type='button' value='Удалить' onClick={this.delete}></input>
+         {(this.props.client.disabledFlag) &&
+            <input type='button' className='btnInGrid' value='Удалить' onClick={this.delete}></input>
+         }
+         {(!this.props.client.disabledFlag) &&
+            <input type='button' className='btnInGrid' value='Отменить' onClick={this.cancel}></input>
+         }
         </td>
       </tr>
     );
