@@ -1,0 +1,30 @@
+﻿table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  background: white;
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th {
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid grey;
+  padding: 10px 8px;
+}
+td {
+  color:black;
+  padding: 9px 8px;
+  border-bottom: 1px solid grey;
+  transition: .3s linear;
+}
+.tabName { 
+  display:inline-block; 
+  margin-left: 20px; 
+}
+.tabBallance { 
+  display:inline-block; 
+  margin-left: 26px; 
+}
+

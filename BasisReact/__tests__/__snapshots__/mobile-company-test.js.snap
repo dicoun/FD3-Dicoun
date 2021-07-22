@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`работа MobileCompany 1`] = `
+<div
+  className="MobileCompany"
+>
+  <input
+    kind="All"
+    onClick={[Function]}
+    type="button"
+    value="Все"
+  />
+  <input
+    kind="Active"
+    onClick={[Function]}
+    type="button"
+    value="Активные"
+  />
+  <input
+    kind="Blocked"
+    onClick={[Function]}
+    type="button"
+    value="Заблокированные"
+  />
+  <hr />
+  <div
+    className="MobileCompanyClients"
+  >
+    <table
+      className="MobileCompanyTable"
+    >
+      <tbody>
+        <tr>
+          <th>
+            Фамилия
+          </th>
+          <th>
+            Имя
+          </th>
+          <th>
+            Отчество
+          </th>
+          <th>
+            Баланс
+          </th>
+          <th>
+            Статус
+          </th>
+          <th>
+            Редактировать
+          </th>
+          <th>
+            Удалить
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <input
+    kind="addClient"
+    onClick={[Function]}
+    type="button"
+    value="Добавить клиента"
+  />
+</div>
+`;
+
+exports[`работа MobileCompany 2`] = `
+<div
+  className="MobileCompany"
+>
+  <input
+    kind="All"
+    onClick={[Function]}
+    type="button"
+    value="Все"
+  />
+  <input
+    kind="Active"
+    onClick={[Function]}
+    type="button"
+    value="Активные"
+  />
+  <input
+    kind="Blocked"
+    onClick={[Function]}
+    type="button"
+    value="Заблокированные"
+  />
+  <hr />
+  <div
+    className="MobileCompanyClients"
+  >
+    <table
+      className="MobileCompanyTable"
+    >
+      <tbody>
+        <tr>
+          <th>
+            Фамилия
+          </th>
+          <th>
+            Имя
+          </th>
+          <th>
+            Отчество
+          </th>
+          <th>
+            Баланс
+          </th>
+          <th>
+            Статус
+          </th>
+          <th>
+            Редактировать
+          </th>
+          <th>
+            Удалить
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <input
+    kind="addClient"
+    onClick={[Function]}
+    type="button"
+    value="Добавить клиента"
+  />
+</div>
+`;
+
+exports[`работа MobileCompany 3`] = `
+<div
+  className="MobileCompany"
+>
+  <input
+    kind="All"
+    onClick={[Function]}
+    type="button"
+    value="Все"
+  />
+  <input
+    kind="Active"
+    onClick={[Function]}
+    type="button"
+    value="Активные"
+  />
+  <input
+    kind="Blocked"
+    onClick={[Function]}
+    type="button"
+    value="Заблокированные"
+  />
+  <hr />
+  <div
+    className="MobileCompanyClients"
+  >
+    <table
+      className="MobileCompanyTable"
+    >
+      <tbody>
+        <tr>
+          <th>
+            Фамилия
+          </th>
+          <th>
+            Имя
+          </th>
+          <th>
+            Отчество
+          </th>
+          <th>
+            Баланс
+          </th>
+          <th>
+            Статус
+          </th>
+          <th>
+            Редактировать
+          </th>
+          <th>
+            Удалить
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <input
+    kind="addClient"
+    onClick={[Function]}
+    type="button"
+    value="Добавить клиента"
+  />
+</div>
+`;
+
+exports[`работа MobileCompany 4`] = `
+<div
+  className="MobileCompany"
+>
+  <input
+    kind="All"
+    onClick={[Function]}
+    type="button"
+    value="Все"
+  />
+  <input
+    kind="Active"
+    onClick={[Function]}
+    type="button"
+    value="Активные"
+  />
+  <input
+    kind="Blocked"
+    onClick={[Function]}
+    type="button"
+    value="Заблокированные"
+  />
+  <hr />
+  <div
+    className="MobileCompanyClients"
+  >
+    <table
+      className="MobileCompanyTable"
+    >
+      <tbody>
+        <tr>
+          <th>
+            Фамилия
+          </th>
+          <th>
+            Имя
+          </th>
+          <th>
+            Отчество
+          </th>
+          <th>
+            Баланс
+          </th>
+          <th>
+            Статус
+          </th>
+          <th>
+            Редактировать
+          </th>
+          <th>
+            Удалить
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <input
+    kind="addClient"
+    onClick={[Function]}
+    type="button"
+    value="Добавить клиента"
+  />
+</div>
+`;

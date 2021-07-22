@@ -1,0 +1,30 @@
+﻿div.MobileClient
+{
+  padding: 2px 0;
+}
+span.MobileClientBalance
+{
+  float: right;
+  width: 30px;
+  font-weight: bold;
+  text-align: right;
+}
+span.MobileClientFIO
+{
+  margin-right: 30px;
+}
+.text {
+  width: 100%;
+}
+.StateActive{
+  background-color:turquoise
+}
+.StateBlocked{
+  background-color:tomato
+}
+input[type=text] {
+  width: 90%;
+}
+.btnInGrid{
+  width: 150px;
+}
