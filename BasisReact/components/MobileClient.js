@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 
 import './MobileClient.css';
+import MobileClientBtn from './MobileClientBtn.js';
 
 import {voteEvents} from './events';
 
@@ -97,7 +98,8 @@ class MobileClient extends React.PureComponent {
           }   
           <td>
           {(this.props.client.disabledFlag) &&
-              <input type='button' kind='edit' className='btnInGrid' value='Редактировать' onClick={this.edit}></input>
+              <input type='button' data-kind='edit' className='btnInGrid' value='Редактировать' onClick={this.edit}></input>
+             //<MobileClientBtn dataKind='edit' className='btnInGrid' value='Редактировать' onClick={this.edit} />
           }
           {(!this.props.client.disabledFlag) &&
               <input type='button' className='btnInGrid' value='Сохранить' onClick={this.save}></input>

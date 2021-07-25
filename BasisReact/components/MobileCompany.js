@@ -205,7 +205,7 @@ class MobileCompany extends React.PureComponent {
   render() {
     console.log("MobileCompany render");
     var clientsCode = [];
-    if(this.state.clients){
+    if(this.props.clients){
       clientsCode=this.state.clients.map( client => {
         if(client.state == this.filterFlag){
           return <MobileClient key={client.id} client={client}/>;
