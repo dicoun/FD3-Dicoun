@@ -33,19 +33,19 @@ class MobileClient extends React.PureComponent {
   }
 
   setSurnameRef = (ref) => {
-    voteEvents.emit('setSurnameRef', ref);
+    voteEvents.emit('setSurnameRef', ref, this.props.client.id);
   }
 
   setBallanceRef = (ref) => {
-    voteEvents.emit('setBallanceRef', ref);
+    voteEvents.emit('setBallanceRef', ref, this.props.client.id);
   }
 
   setNameRef = (ref) => {
-    voteEvents.emit('setNameRef', ref);
+    voteEvents.emit('setNameRef', ref, this.props.client.id);
   }
 
   setMiddleNameRef = (ref) => {
-    voteEvents.emit('setMiddleNameRef', ref);
+    voteEvents.emit('setMiddleNameRef', ref, this.props.client.id);
   }
 
   render() {

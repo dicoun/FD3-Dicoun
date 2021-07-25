@@ -28,6 +28,11 @@ class MobileCompany extends React.PureComponent {
   };
 
   filterFlag = '';
+  newNameRef = [];
+  newSurnameRef = [];
+  newBallanceRef = [];
+  newMiddleNameRef = [];
+
   
   filterAll = () => {
     if(this.state.clients){
@@ -77,20 +82,20 @@ class MobileCompany extends React.PureComponent {
     }
   };
 
-  setNewSurnameRef = (ref) => {
-    this.newSurnameRef=ref;
+  setNewSurnameRef = (ref, id) => {
+    this.newSurnameRef.push({ref:ref,id:id});
   };
 
-  setNewBallanceRef = (ref) => {
-    this.newBallanceRef=ref;
+  setNewBallanceRef = (ref, id) => {
+    this.newBallanceRef.push({ref:ref,id:id});
   };
 
-  setNewNameRef = (ref) => {
-    this.newNameRef=ref;
+  setNewNameRef = (ref, id) => {
+    this.newNameRef.push({ref:ref,id:id});
   };
 
-  setNewMiddleNameRef = (ref) => {
-    this.newMiddleNameRef=ref;
+  setNewMiddleNameRef = (ref, id) => {
+    this.newMiddleNameRef.push({ref:ref,id:id});;
   };
 
   AddBtn = () => {
@@ -146,19 +151,35 @@ class MobileCompany extends React.PureComponent {
       let newClient={...c}; // копия хэша изменившегося клиента
       if(c.id == id){
         if ( this.newSurnameRef ) { // всегда проверяем - мало ли метод вызовется когда DOM-элемента уже нет или ещё нет?
-          let newSurname=this.newSurnameRef.value;
-          let newBallance=this.newBallanceRef.value;
+          this.newSurnameRef.forEach((rec,i) => {
+            if(rec.id == id){
+              let newSurname=rec.ref.value;
+              newClient.fam=newSurname;
+            }
+          });
+          this.newBallanceRef.forEach((rec,i) => {
+            if(rec.id == id){
+              let newBallance=rec.ref.value;
+              newClient.balance=newBallance;
+            }
+          });
           newClient.disabledFlag=true;
-          newClient.fam=newSurname;
-          newClient.balance=newBallance;
           if(c.addFlag){
-            let newName=this.newNameRef.value;
-            newClient.im=newName;
-            let newMiddleName=this.newMiddleNameRef.value;
-            newClient.otch=newMiddleName;
+            this.newNameRef.forEach((rec,i) => {
+              if(rec.id == id){
+                let newName=rec.ref.value;
+                newClient.im=newName;
+              }
+            });
+            this.newMiddleNameRef.forEach((rec,i) => {
+              if(rec.id == id){
+                let newMiddleName=rec.ref.value;
+                newClient.otch=newMiddleName;
+              } 
+            });
             newClient.addFlag=false;
+            newClients[i]=newClient;
           }
-          newClients[i]=newClient;
         }
       }
     });
