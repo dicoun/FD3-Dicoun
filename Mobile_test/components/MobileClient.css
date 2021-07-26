@@ -25,6 +25,6 @@ span.MobileClientFIO
 input[type=text] {
   width: 90%;
 }
-.btnInGrid{
+.btnInGrid, .btnInGridEdit, .btnInGridDel{
   width: 150px;
 }

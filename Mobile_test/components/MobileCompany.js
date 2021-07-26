@@ -150,39 +150,58 @@ class MobileCompany extends React.PureComponent {
     newClients.forEach( (c,i) => {
       let newClient={...c}; // копия хэша изменившегося клиента
       if(c.id == id){
-        if ( this.newSurnameRef ) { // всегда проверяем - мало ли метод вызовется когда DOM-элемента уже нет или ещё нет?
+        if ( this.newSurnameRef.length ) { // всегда проверяем - мало ли метод вызовется когда DOM-элемента уже нет или ещё нет?
           this.newSurnameRef.forEach((rec,i) => {
             if(rec.id == id){
-              let newSurname=rec.ref.value;
-              newClient.fam=newSurname;
+              if(rec.ref){
+                let newSurname=rec.ref.value;
+                newClient.fam=newSurname;
+              }
             }
           });
+        }
+        if(this.newBallanceRef.length){
           this.newBallanceRef.forEach((rec,i) => {
             if(rec.id == id){
-              let newBallance=rec.ref.value;
-              newClient.balance=newBallance;
+              if(rec.ref){
+                let newBallance=rec.ref.value;
+                newClient.balance=newBallance;
+              }
             }
           });
-          newClient.disabledFlag=true;
-          if(c.addFlag){
+        }
+        newClient.disabledFlag=true;
+        if(c.addFlag){
+          if(this.newNameRef.length){
             this.newNameRef.forEach((rec,i) => {
               if(rec.id == id){
-                let newName=rec.ref.value;
-                newClient.im=newName;
+                if(rec.ref){
+                  let newName=rec.ref.value;
+                  newClient.im=newName;
+                }
               }
             });
+          }
+          if(this.newMiddleNameRef.length){
             this.newMiddleNameRef.forEach((rec,i) => {
               if(rec.id == id){
-                let newMiddleName=rec.ref.value;
-                newClient.otch=newMiddleName;
+                if(rec.ref){
+                  let newMiddleName=rec.ref.value;
+                  newClient.otch=newMiddleName;
+                }
               } 
             });
-            newClient.addFlag=false;
-            newClients[i]=newClient;
           }
+          newClient.addFlag=false;
         }
+        newClients[i]=newClient;
       }
     });
+    this.newSurnameRef = [];
+    this.newBallanceRef = [];
+    this.newNameRef = [];
+    this.newMiddleNameRef = [];
+
     this.setState({clients: newClients});
   }
 

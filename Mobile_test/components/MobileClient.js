@@ -98,7 +98,7 @@ class MobileClient extends React.PureComponent {
           }   
           <td>
           {(this.props.client.disabledFlag) &&
-              <input type='button' data-kind='edit' className='btnInGrid' value='Редактировать' onClick={this.edit}></input>
+              <input type='button' data-kind='edit' className='btnInGridEdit' value='Редактировать' onClick={this.edit}></input>
              //<MobileClientBtn dataKind='edit' className='btnInGrid' value='Редактировать' onClick={this.edit} />
           }
           {(!this.props.client.disabledFlag) &&
@@ -107,7 +107,7 @@ class MobileClient extends React.PureComponent {
           </td>
           <td>
           {(this.props.client.disabledFlag) &&
-              <input type='button' kind='delete' className='btnInGrid' value='Удалить' onClick={this.delete}></input>
+              <input type='button' kind='delete' className='btnInGridDel' value='Удалить' onClick={this.delete}></input>
           }
           {(!this.props.client.disabledFlag) &&
               <input type='button' className='btnInGrid' value='Отменить' onClick={this.cancel}></input>

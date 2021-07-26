@@ -16,7 +16,7 @@ test('работа MobileClient', () => {
   //expect(component.root).toBeNull();
 
   // найдём в вёрстке компонента саму кнопку
-  const editBtnElem = component.root.find( el => el.type=='input' /*&& el.props.dataKind == 'edit'*/ ); 
+  const editBtnElem = component.root.find( el => el.className=='btnInGridEdit' /*&& el.props.dataKind == 'edit'*/ ); 
   //const editBtnElem = component.root.findByType(MobileClientBtn);
 
   // и "нажмём" на неё
