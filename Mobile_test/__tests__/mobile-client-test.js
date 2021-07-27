@@ -6,18 +6,16 @@ import MobileClientBtn from '../components/MobileClientBtn.js';
 
 test('работа MobileClient', () => {
 
+  const client =  {id:101, fam:"Иванов", im:"Иван", otch:"Иванович", balance:'200', state: "active", disabledFlag: true};
+
   const component = renderer.create(
-    <MobileClient />
+    <MobileClient key={client.id} client={client}/>
   );
 
   let componentTree=component.toJSON();
-  /*expect(componentTree).toMatchSnapshot();*/
-
-  //expect(component.root).toBeNull();
 
   // найдём в вёрстке компонента саму кнопку
-  const editBtnElem = component.root.find( el => el.className=='btnInGridEdit' /*&& el.props.dataKind == 'edit'*/ ); 
-  //const editBtnElem = component.root.findByType(MobileClientBtn);
+  const editBtnElem = component.root.find( el => el.type=='input' && el.props.kind == 'edit' ); 
 
   // и "нажмём" на неё
   editBtnElem.props.onClick();
@@ -27,12 +25,12 @@ test('работа MobileClient', () => {
   expect(componentTree).toMatchSnapshot();
 
   // найдём в вёрстке компонента саму кнопку
- /* const deleteBtnElem = component.root.find( el => el.type=='input' && el.props.kind == 'delete' ); 
+  const deleteBtnElem = component.root.find( el => el.type=='input' && el.props.kind == 'delete' ); 
   // и "нажмём" на неё
   deleteBtnElem.props.onClick();
 
   // получаем уже изменённый снэпшот
   componentTree=component.toJSON();
-  expect(componentTree).toMatchSnapshot();*/
+  expect(componentTree).toMatchSnapshot();
     
 });

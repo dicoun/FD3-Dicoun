@@ -98,7 +98,7 @@ class MobileClient extends React.PureComponent {
           }   
           <td>
           {(this.props.client.disabledFlag) &&
-              <input type='button' data-kind='edit' className='btnInGridEdit' value='Редактировать' onClick={this.edit}></input>
+              <input type='button' kind='edit' className='btnInGridEdit' value='Редактировать' onClick={this.edit}></input>
              //<MobileClientBtn dataKind='edit' className='btnInGrid' value='Редактировать' onClick={this.edit} />
           }
           {(!this.props.client.disabledFlag) &&

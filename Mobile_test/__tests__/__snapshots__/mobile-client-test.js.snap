@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`работа MobileClient 1`] = `
+<tr
+  className={101}
+>
+  <td>
+    <input
+      className="text"
+      defaultValue="Иванов"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td>
+    <input
+      className="text"
+      defaultValue="Иван"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td>
+    <input
+      className="text"
+      defaultValue="Иванович"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td>
+    <input
+      className="text"
+      defaultValue="200"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td
+    className="StateActive"
+  >
+    <span
+      className="State"
+    >
+      active
+    </span>
+  </td>
+  <td>
+    <input
+      className="btnInGridEdit"
+      kind="edit"
+      onClick={[Function]}
+      type="button"
+      value="Редактировать"
+    />
+  </td>
+  <td>
+    <input
+      className="btnInGridDel"
+      kind="delete"
+      onClick={[Function]}
+      type="button"
+      value="Удалить"
+    />
+  </td>
+</tr>
+`;
+
+exports[`работа MobileClient 2`] = `
+<tr
+  className={101}
+>
+  <td>
+    <input
+      className="text"
+      defaultValue="Иванов"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td>
+    <input
+      className="text"
+      defaultValue="Иван"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td>
+    <input
+      className="text"
+      defaultValue="Иванович"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td>
+    <input
+      className="text"
+      defaultValue="200"
+      disabled={true}
+      type="text"
+    />
+  </td>
+  <td
+    className="StateActive"
+  >
+    <span
+      className="State"
+    >
+      active
+    </span>
+  </td>
+  <td>
+    <input
+      className="btnInGridEdit"
+      kind="edit"
+      onClick={[Function]}
+      type="button"
+      value="Редактировать"
+    />
+  </td>
+  <td>
+    <input
+      className="btnInGridDel"
+      kind="delete"
+      onClick={[Function]}
+      type="button"
+      value="Удалить"
+    />
+  </td>
+</tr>
+`;
