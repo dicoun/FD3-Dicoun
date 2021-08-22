@@ -1,0 +1,29 @@
+body{
+    background: #16a085;
+   }
+.content{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px;
+  }
+.nav-link{
+    font-weight: bold;
+    padding-top: 13px;
+    padding-bottom: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    background: #343436;
+    color: #fff;
+    border-radius: 15px;
+    height: 100px;
+  }
+.nav-link.active{
+    background: #fff;
+    color: #000;
+  }
+.shopName {
+    font-style: italic;
+    font-family: fantasy;
+}

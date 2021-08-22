@@ -1,0 +1,24 @@
+.productGrid {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    margin-top: -31px;
+    margin-left: 29px;
+    background: #fff;
+    color: #000;
+    border-radius: 15px;
+    z-index: 1000;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.footer_info {
+    position:relative;
+    left:75%;
+    margin-top: 60px;
+    font-weight: bold;
+    color:teal;
+}

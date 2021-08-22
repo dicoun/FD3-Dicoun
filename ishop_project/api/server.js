@@ -29,19 +29,19 @@ app.get('/api/products', (req, res) => {
 app.get('/api/products/:id', (req, res) => {
 	const data = JSON.parse(fs.readFileSync(productsFile, 'utf8'));
 	var length=data.length;
-	var page_count= Math.floor(length/2);
-	if(length%2){
+	var page_count= Math.floor(length/10);
+	if(length%10){
 		page_count++;
 	}
 	var page=req.params.id;
 	var prodIndexStart, prodIndexEnd;
 	if(page!=page_count){
-		prodIndexEnd=(page*2)-1;
-		prodIndexStart=(page-1)*2;
+		prodIndexEnd=(page*10)-1;
+		prodIndexStart=(page-1)*10;
 	}
 	else{
 		prodIndexEnd=length-1;
-		prodIndexStart=(page-1)*2;
+		prodIndexStart=(page-1)*10;
 	}
 
 	var products = data.filter((product,index) => {
@@ -79,7 +79,6 @@ app.get('/api/basket', (req, res) => {
 
 app.post('/api/basket/save', (req, res) => {
 	var basketArr = req.body;
-
 	fs.writeFileSync(ordersFile, JSON.stringify(basketArr));
 	fs.writeFileSync(basketFile, JSON.stringify([]));
 
